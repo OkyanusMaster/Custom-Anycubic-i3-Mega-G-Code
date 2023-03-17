@@ -1,0 +1,15 @@
+G21 ;metric values
+G90 ;absolute positioning
+M82 ;set extruder to absolute mode
+M107 ;start with the fan off
+G28 X0 Y0 ;move X/Y to min endstops
+G28 Z0 ;move Z to min endstops
+G92 E0 ;zero the extruded length
+G1 Y2 F500.0 ; move out of print volume
+G1 X60.0 E9 F500.0 ; start purge
+G1 X100 E12.5 F500.0 ; finish purge line
+G92 E0 ;zero the extruded length again
+G1 F{speed_travel}
+G0 F{speed_travel}
+M117 Printing...
+G5
